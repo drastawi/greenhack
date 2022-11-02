@@ -1,9 +1,12 @@
 
 const fs = require('fs')
 const path = require('path')
-const dataString = fs.readFileSync(path.join(__dirname, '930-data-export.json')).toString()
-const data = JSON.parse(dataString)
-print(data)
+const EastString = fs.readFileSync(path.join(__dirname, '930-data-export.json')).toString()
+const WestString = fs.readFileSync(path.join(__dirname, '930-data-export.json')).toString()
+const EastData = JSON.parse(EastString)
+const WestData = JSON.parse(WestString)
+print(EastData)
+print(WestData)
 
 //TODO update handicap
 
