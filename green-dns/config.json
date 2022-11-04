@@ -1,0 +1,18 @@
+{
+  "streaming_service": {
+    "locations": [
+      "us-east-1",
+      "us-west-1"
+    ],
+    "green_factor": "VERY_GREEN"
+  },
+  "multiplayer_service": {
+    "locations": [
+      "us-east-1",
+      "us-west-1"
+    ],
+    "green_factor": "LATENCY_FOCUSED"
+  }
+}
+
+
