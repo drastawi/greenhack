@@ -2,6 +2,7 @@
   "main": "carbon-dns.js",
   "dependencies": {
     "crypto-js": "^4.1.1",
+    "dotenv": "^16.0.3",
     "request": "^2.88.2"
   }
 }
