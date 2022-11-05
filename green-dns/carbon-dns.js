@@ -19,24 +19,20 @@ const westData = JSON.parse(westString)
 
 const timeEast = process.argv[2]
 const timeWest = process.argv[3]
-const westSolar = westData.series.find(o => o.name === "Solar").data.find(o => {
-    return o['Timestamp (Hour Ending)'] === timeWest
-})
-const eastSolar = eastData.series.find(o => o.name === "Solar").find(o => o['Timestamp (Hour Ending)'] === timeEast)
-const westGas = westData.series.find(o => o.name === "Natural Gas").find(o => o['Timestamp (Hour Ending)'] === timeWest)
-const eastGas = eastData.series.find(o => o.name === "Natural Gas").find(o => o['Timestamp (Hour Ending)'] === timeEast)
-
-console.log(westSolar)
-console.log(eastSolar)
-console.log(westGas)
-console.log(eastGas)
+const westSolar = westData.series.find(o => o.name === "Solar").data.find(o => o['Timestamp (Hour Ending)'] === timeWest).value
+const eastSolar = eastData.series.find(o => o.name === "Solar").data.find(o => o['Timestamp (Hour Ending)'] === timeEast).value
+const westGas = westData.series.find(o => o.name === "Natural gas").data.find(o => o['Timestamp (Hour Ending)'] === timeWest).value
+const eastGas = eastData.series.find(o => o.name === "Natural gas").data.find(o => o['Timestamp (Hour Ending)'] === timeEast).value
 
 // night
-const eastIntensity = 0.3
-const westIntensity = 0.9
+// const eastIntensity = 0.3
+// const westIntensity = 0.9
 // day
 // const eastIntensity = 0.2
 // const eastIntensity = 0.3
+
+const eastIntensity = eastSolar/(eastSolar + eastGas)
+const westIntensity = westSolar/(westSolar + westGas)
 
 const eastNet = (eastIntensity-westIntensity)
 

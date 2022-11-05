@@ -1,5 +1,13 @@
 # greenhack
 
+This is a project submitted to a GreenHack 2022. Please learn more about it from the [project description](https://taikai.network/gsf/hackathons/carbonhack22/projects/cl93xw83p12030101yrdbov5qgb/idea.
+). 
+
+There are three parts to this repo. 
+* cdk to deploy kubernetes infra in two AWS regions.
+* cdk8s to deploy a web application to the two clusters.
+* green-dns a script that takes in time as an argument and updates DNS records in ConstelliX DNS to preferentially direct the web traffic to the greener data center.
+
 ## Deployment
 
 set AWS config
